@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+  background: rgb(150,181,217);
+  background: linear-gradient(45deg, rgba(150,181,217,1) 30%, rgba(204,166,183,1) 76%);
+}
+
+.container{
+  border: 10px solid rgb(202,212,224);
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  top: 10%;
+  left: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-size: 32px;
+  border-radius: 30%;
+  background: rgb(150,181,217);
+  background: linear-gradient(45deg, rgba(150,181,217,1) 40%, rgba(204,166,183,1) 56%);
+  box-shadow: 0 0 5px rgb(202,212,224),
+              0 0 10px rgb(202,212,224),
+              0 0 15px rgb(202,212,224);
+
+  animation: bounceInDown;
+  animation-duration: 2.5s;
+}
+
+.quadro{
+width: 80%;
+  height: 70%;
+  position: relative;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  background: inherit;
+  overflow: hidden;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  animation: bounceInDown;
+  animation-duration: 1.5s
+}
+
+.quadro:before{
+   content: "";
+  position: relative;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+  margin: -20px;
+
+}
+
+.time{
+  font-size: 4em;
+  color: rgb(202,212,224);
+}
+
+.blink-colon{
+  animation: blink ls infinite linear;
+}
+
+@keyframe blink{
+  0%, 100%{
+    opacity:1;
+  }
+  30% {
+    opacity:0.4;
+  }
+}
+
+
+.date-container{
+  margin-top: 6px;
+  font-size: 24px;
+  color: rgb(202,212,224);
+}
+
+@media screen and (min-width:280px) {
+  .time {
+    font-size:1em;
+  }
+  .container{
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .date-container{
+    font-size: 24px;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width:320px) {
+  .time {
+    font-size:0.7em;
+   
+  }
+} 
+@media screen and (min-width:360px) {
+  .time {
+    font-size:1em;
+  }
+}
+
+@media screen and (min-width:725px) {
+  .time {
+    font-size:1.5em;
+  }
+}
+
+@media screen and (min-width:805px) {
+  .time {
+    font-size:1.7em;
+  }
+  .date-container{
+    font-size:20px;
+  }
+}
+
+@media screen and (min-width:905px) {
+  .time {
+    font-size:2em;
+  }
+  .date-container{
+    font-size:28px;
+  }
+}
